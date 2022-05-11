@@ -9,9 +9,23 @@ class HomeController {
   }
 
   ValueNotifier<Users?> users = ValueNotifier<Users?>(null);
+  Users? _cacheUsers;
+
+  onChanged(String value) {
+    var list = _cacheUsers!.results
+        .where(
+          (element) => element.name.first.toLowerCase().contains(
+                value.toLowerCase(),
+              ),
+        )
+        .toList();
+    debugPrint(list.toString());
+    users.value = users.value!.copyWith(results: list);
+  }
 
   void fetchUsers() async {
     var result = await _repository.getUsers();
     users.value = result;
+    _cacheUsers = result;
   }
 }

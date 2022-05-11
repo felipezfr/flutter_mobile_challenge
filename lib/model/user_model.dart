@@ -18,6 +18,16 @@ class Users {
     _data['info'] = info.toJson();
     return _data;
   }
+
+  Users copyWith({
+    List<Results>? results,
+    Info? info,
+  }) {
+    return Users(
+      results: results ?? this.results,
+      info: info ?? this.info,
+    );
+  }
 }
 
 class Results {

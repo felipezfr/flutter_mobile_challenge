@@ -7,7 +7,7 @@ class DioServiceImp implements ApiService {
     return Dio(
       BaseOptions(
           baseUrl: 'https://randomuser.me/api/',
-          queryParameters: {'results': 4}),
+          queryParameters: {'results': 50}),
     );
   }
 }
