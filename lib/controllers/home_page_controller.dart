@@ -9,7 +9,19 @@ class HomeController {
   }
 
   ValueNotifier<Users?> users = ValueNotifier<Users?>(null);
+  ValueNotifier<bool> loading = ValueNotifier<bool>(false);
+
   Users? _cacheUsers;
+
+  late final ScrollController scrollController;
+
+  infiniteScrolling() {
+    if (scrollController.position.pixels + 350 >=
+            scrollController.position.maxScrollExtent &&
+        loading.value == false) {
+      fetchUsers();
+    }
+  }
 
   onChanged(String value) {
     var list = _cacheUsers!.results
@@ -23,9 +35,24 @@ class HomeController {
     users.value = users.value!.copyWith(results: list);
   }
 
+  void scrollToTop() {
+    scrollController.animateTo(
+      0,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.linear,
+    );
+  }
+
   void fetchUsers() async {
+    loading.value = true;
+
     var result = await _repository.getUsers();
-    users.value = result;
+
+    _cacheUsers?.results.addAll(result.results);
+
+    users.value != null ? users.value = _cacheUsers : users.value = result;
+
     _cacheUsers = result;
+    loading.value = false;
   }
 }
