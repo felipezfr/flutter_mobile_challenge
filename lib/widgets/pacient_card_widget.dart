@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_challenge/model/user_model.dart';
 import 'package:flutter_mobile_challenge/pages/modal_page.dart';
+import 'package:flutter_mobile_challenge/util/app_colors.dart';
 import 'package:intl/intl.dart';
 
 class PacientCard extends StatelessWidget {
@@ -12,8 +13,10 @@ class PacientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DateFormat formatter = DateFormat('dd-MM-yyyy');
-    final String formattedAge = formatter.format(DateTime.parse(user.dob.date));
+    final DateFormat _formatter = DateFormat('dd-MM-yyyy');
+    final String _formattedDate =
+        _formatter.format(DateTime.parse(user.dob.date));
+
     return InkWell(
       onTap: () {
         showModalBottomSheet<void>(
@@ -31,8 +34,9 @@ class PacientCard extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(
               width: 1.5,
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withOpacity(0.3),
             ),
+            color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(children: [
@@ -55,7 +59,7 @@ class PacientCard extends StatelessWidget {
                       user.gender == 'male'
                           ? const Icon(Icons.male_outlined)
                           : const Icon(Icons.female),
-                      Text(formattedAge),
+                      Text(_formattedDate),
                     ],
                   ),
                 ],

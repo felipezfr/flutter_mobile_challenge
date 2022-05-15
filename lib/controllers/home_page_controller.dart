@@ -11,6 +11,8 @@ class HomeController {
   ValueNotifier<Users?> users = ValueNotifier<Users?>(null);
   ValueNotifier<bool> loading = ValueNotifier<bool>(false);
 
+  String? _gender;
+
   Users? _cacheUsers;
 
   late final ScrollController scrollController;
@@ -35,6 +37,12 @@ class HomeController {
     users.value = users.value!.copyWith(results: list);
   }
 
+  onChangeFilter(String? value) {
+    _gender = value;
+    users.value = null;
+    fetchUsers();
+  }
+
   void scrollToTop() {
     scrollController.animateTo(
       0,
@@ -46,7 +54,7 @@ class HomeController {
   void fetchUsers() async {
     loading.value = true;
 
-    var result = await _repository.getUsers();
+    var result = await _repository.getUsers(gender: _gender);
 
     _cacheUsers?.results.addAll(result.results);
 

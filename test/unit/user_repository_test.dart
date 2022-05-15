@@ -1,4 +1,3 @@
-import 'package:flutter_mobile_challenge/repositories/users_repository.dart';
 import 'package:flutter_mobile_challenge/repositories/users_repository_imp.dart';
 import 'package:flutter_mobile_challenge/services/dio_service_imp.dart';
 import 'package:flutter_test/flutter_test.dart';

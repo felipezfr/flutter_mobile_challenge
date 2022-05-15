@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_challenge/model/user_model.dart';
+import 'package:intl/intl.dart';
 
 class ModalPage extends StatelessWidget {
   final Results user;
@@ -10,6 +11,9 @@ class ModalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DateFormat _formatter = DateFormat('dd-MM-yyyy');
+    final String formattedDate =
+        _formatter.format(DateTime.parse(user.dob.date));
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -68,7 +72,7 @@ class ModalPage extends StatelessWidget {
                     "Data de nascimento:",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text(user.dob.date),
+                  Text(formattedDate),
                 ],
               ),
               Column(

@@ -75,7 +75,9 @@ class _HomePageState extends State<HomePage> {
                   //     color: Colors.black54,
                   //   ),
                   // ),
-                  FilterDropdown()
+                  FilterDropdown(
+                    controller: _controller,
+                  )
                 ],
               ),
               ValueListenableBuilder<Users?>(

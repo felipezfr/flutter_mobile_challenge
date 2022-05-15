@@ -8,9 +8,9 @@ class UsersRepositoryImp implements UsersRepository {
   UsersRepositoryImp(this._dioService);
 
   @override
-  Future<Users> getUsers() async {
+  Future<Users> getUsers({String? gender}) async {
     try {
-      var result = await _dioService.getDio().get("");
+      var result = await _dioService.getDio(gender: gender).get("");
       var data = Users.fromJson(result.data);
       return data;
     } catch (e) {
