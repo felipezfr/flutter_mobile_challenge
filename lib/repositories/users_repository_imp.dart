@@ -2,7 +2,7 @@ import 'package:flutter_mobile_challenge/model/user_model.dart';
 import 'package:flutter_mobile_challenge/repositories/users_repository.dart';
 import 'package:flutter_mobile_challenge/services/api_service.dart';
 
-class UsersRepositoryImp implements UsersRepository {
+class UsersRepositoryImp implements IUsersRepository {
   final ApiService _dioService;
 
   UsersRepositoryImp(this._dioService);

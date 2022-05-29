@@ -3,7 +3,7 @@ import 'package:flutter_mobile_challenge/model/user_model.dart';
 import 'package:flutter_mobile_challenge/repositories/users_repository.dart';
 
 class HomeController {
-  final UsersRepository _repository;
+  final IUsersRepository _repository;
   HomeController(this._repository) {
     fetchUsers();
   }

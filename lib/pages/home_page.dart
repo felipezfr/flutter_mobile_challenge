@@ -3,8 +3,8 @@ import 'package:flutter_mobile_challenge/controllers/home_page_controller.dart';
 import 'package:flutter_mobile_challenge/model/user_model.dart';
 import 'package:flutter_mobile_challenge/repositories/users_repository_imp.dart';
 import 'package:flutter_mobile_challenge/services/dio_service_imp.dart';
-import 'package:flutter_mobile_challenge/widgets/filter_dropdown_widget.dart';
 import 'package:flutter_mobile_challenge/widgets/pacient_card_widget.dart';
+import 'package:flutter_mobile_challenge/widgets/popup_menu_filter_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,17 +67,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  // const Padding(
-                  //   padding: EdgeInsets.symmetric(horizontal: 15),
-                  //   child: Icon(
-                  //     Icons.filter_alt,
-                  //     size: 40,
-                  //     color: Colors.black54,
-                  //   ),
-                  // ),
-                  FilterDropdown(
-                    controller: _controller,
-                  )
+                  PopupMenuFilter(
+                    onChangeFilter: _controller.onChangeFilter,
+                  ),
+
+                  // FilterDropdown(
+                  //   controller: _controller,
+                  // )
                 ],
               ),
               ValueListenableBuilder<Users?>(

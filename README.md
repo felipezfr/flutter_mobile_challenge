@@ -1,16 +1,25 @@
 # flutter_mobile_challenge
 
-A new Flutter project.
+## Mobile Challenge 🏅
+https://lab.coodesh.com/public-challenges/mobile-challenge
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Introdução
+Este é um desafio para testar seus conhecimentos de Mobile;
+O objetivo é avaliar a sua forma de estruturação e autonomia em decisões para construir algo escalável utilizando um framework moderno.
+Você está livre para usar Android Kotlin ou Swift iOS ou Flutter ou React Native ou Ionic no desenvolvimento da solução deste tech challenge.
 
-A few resources to get you started if this is your first Flutter project:
+## Case
+A empresa Pharma Inc, está trabalhando em um projeto em colaboração com sua base de clientes para facilitar a gestão e visualização da informação dos seus pacientes de maneira simples e objetiva em uma aplicação onde podem listar, filtrar e expandir os dados disponíveis.
+O seu objetivo nesse projeto, é trabalhar no desenvolvimento da Aplicação end que consumirá a API da empresa Pharma Inc seguindo os requisitos propostos neste desafio.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Recursos
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Estudar a documentação da REST API: https://randomuser.me/documentation
+
+Trabalhar em um FORK deste repositório em seu usuário ou utilizar um repositório em seu github pessoal (não esqueça de colocar no readme a referência a este challenge);
+Logo da Marca: Pharma Inc
+
+Cores para trabalhar no Projeto: UI Colors
+
+Wireframe com as 3 telas principais.
